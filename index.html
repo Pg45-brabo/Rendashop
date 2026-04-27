@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R&S Makeup | Link in Bio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="RendaShop: Descubra o que postar para vender no TikTok Shop todos os dias. Roteiros prontos, produtos em alta e ferramentas com IA.">
+    <meta property="og:title" content="RendaShop - Venda no TikTok Shop Todo Dia">
+    <meta property="og:description" content="Use roteiros prontos, produtos em alta e ferramentas para criar conteúdo mesmo sem aparecer.">
+    <meta property="og:image" content="https://i.postimg.cc/W4n6k4NZ/Banner-Renda-Shop.png">
+    <title>RendaShop — Venda no TikTok Shop Todo Dia</title>
+ 
+    <link rel="icon" href="https://i.postimg.cc/W4n6k4NZ/Banner-Renda-Shop.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://i.postimg.cc/W4n6k4NZ/Banner-Renda-Shop.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+ 
+    <style>
+        :root {
+            --blush: #f4d9d4;
+            --gold: #d4af37; 
+            --gold-light: #f9e498;
+            --gold-dark: #b8860b;
+            --black: #1a1a1a;
+            --red:    #ff2d2d;
+            --orange: #ff6a00;
+            --black:  #0a0a0a;
+            --dark:   #111111;
+            --card:   #161616;
+            --border: #252525;
+            --text:   #f0f0f0;
+            --muted:  #888;
+        }
+ 
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+        body {
+            background-color: var(--blush);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--black);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background:var(--black);
+            color:var(--text);
+            font-family:'Manrope',sans-serif;
+            overflow-x:hidden;
+            -webkit-font-smoothing:antialiased;
+        }
+        /* Container de Animação Unicorn Studio */
+        #bg-container {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            width: 100%;
+            height: 100vh;
+ 
+        /* TICKER */
+        .ticker { background:var(--red); padding:10px 0; overflow:hidden; white-space:nowrap; }
+        .ticker-inner {
+            display:inline-block;
+            animation:ticker 22s linear infinite;
+            font-family:'Bebas Neue',sans-serif;
+            font-size:1rem; letter-spacing:2px; color:#fff;
+        }
+        /* Overlay para legibilidade */
+        .bg-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: rgba(244, 217, 212, 0.45);
+            backdrop-filter: blur(3px);
+        .ticker-inner span { margin:0 40px; opacity:0.6; }
+        @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+ 
+        /* HERO */
+        .hero {
+            min-height:100vh;
+            display:flex; flex-direction:column;
+            justify-content:center; align-items:center;
+            text-align:center;
+            padding:80px 20px 60px;
+            position:relative; overflow:hidden;
+        }
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
+        .hero::before {
+            content:'';position:absolute;inset:0;
+            background:linear-gradient(135deg,rgba(255,45,45,0.07) 0%,transparent 60%),
+                        radial-gradient(ellipse at 80% 20%,rgba(255,106,0,0.05) 0%,transparent 60%);
+            pointer-events:none;
+        }
+        .main-wrapper {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            width: 100%;
+        .hero::after {
+            content:'';position:absolute;inset:0;
+            background-image:linear-gradient(rgba(255,45,45,0.04) 1px,transparent 1px),
+                              linear-gradient(90deg,rgba(255,45,45,0.04) 1px,transparent 1px);
+            background-size:60px 60px;
+            pointer-events:none;
+            animation:gridShift 20s linear infinite;
+        }
+        .container {
+            width: 100%;
+            max-width: 420px;
+            padding: 60px 24px;
+            text-align: center;
+        @keyframes gridShift { from{background-position:0 0} to{background-position:60px 60px} }
+ 
+        .hero-logo {
+            width:90px; height:90px; margin-bottom:24px;
+            border-radius:20px; overflow:hidden;
+            border:2px solid var(--border);
+            position:relative; z-index:1;
+            animation:fadeDown .6s ease both;
+        }
+        .logo-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 24px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+            padding: 10px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        .hero-logo img { width:100%; height:100%; object-fit:cover; display:block; }
+ 
+        .hero-badge {
+            display:inline-flex; align-items:center; gap:8px;
+            background:rgba(255,45,45,0.12); border:1px solid rgba(255,45,45,0.3);
+            color:var(--red); font-size:.8rem; font-weight:700;
+            letter-spacing:2px; text-transform:uppercase;
+            padding:6px 16px; border-radius:100px;
+            margin-bottom:28px; position:relative; z-index:1;
+            animation:fadeDown .6s .1s ease both;
+        }
+        .logo-container img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            border-radius: 50%;
+        .hero-badge::before {
+            content:''; width:8px; height:8px;
+            background:var(--red); border-radius:50%;
+            animation:blink 1s infinite;
+        }
+        .brand-name {
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+ 
+        .hero h1 {
+            font-family:'Bebas Neue',sans-serif;
+            font-size:clamp(2.8rem,8vw,6rem);
+            line-height:.95; letter-spacing:1px;
+            max-width:900px; position:relative; z-index:1;
+            animation:fadeDown .6s .2s ease both;
+        }
+        .bio {
+            font-size: 0.9rem;
+            color: #444;
+            margin-bottom: 48px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        .hero h1 em {
+            font-style:normal; color:var(--red); position:relative;
+        }
+        .links-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        .hero h1 em::after {
+            content:''; position:absolute;
+            bottom:4px; left:0; right:0; height:4px;
+            background:linear-gradient(90deg,var(--red),var(--orange));
+            border-radius:2px;
+        }
+        /* Botão Beauty Luxury (Blush & Gold) com Brilho Giratório */
+        .link-card {
+            position: relative;
+            padding: 16px 20px;
+            border-radius: 999px;
+            text-decoration: none;
+            color: #FFFFFF;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #C9A96E; /* Ouro base para o efeito */
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            overflow: hidden;
+            border: none;
+        .hero-sub {
+            font-size:clamp(1rem,2.5vw,1.25rem);
+            color:#aaa; max-width:600px; line-height:1.6;
+            margin-top:24px; position:relative; z-index:1;
+            animation:fadeDown .6s .3s ease both;
+        }
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                transparent, 
+                transparent, 
+                rgba(255, 255, 255, 0.8), 
+                transparent,
+                transparent
+            );
+            animation: rotate 4s linear infinite;
+            z-index: 1;
+        .hero-sub strong { color:var(--text); }
+ 
+        @keyframes fadeDown { from{opacity:0;transform:translateY(-20px)} to{opacity:1;transform:translateY(0)} }
+ 
+        /* BOTÃO */
+        .btn-wrap {
+            position:relative; display:inline-block;
+            animation:fadeDown .6s .4s ease both; margin-top:36px;
+        }
+        .link-card::after {
+            content: '';
+            position: absolute;
+            inset: 2px; 
+            background: #D8B4A0;
+            border-radius: 999px;
+            z-index: 2;
+            transition: background 0.3s ease;
+        .btn-cta {
+            display:inline-flex; align-items:center; justify-content:center; gap:10px;
+            background:linear-gradient(135deg,var(--red) 0%,var(--orange) 100%);
+            color:#fff; font-family:'Manrope',sans-serif;
+            font-size:1.05rem; font-weight:800;
+            text-decoration:none; padding:18px 36px;
+            border-radius:8px; cursor:pointer;
+            position:relative; overflow:hidden;
+            transition:transform .2s,box-shadow .2s;
+            box-shadow:0 6px 30px rgba(255,45,45,0.4);
+            text-transform:uppercase; letter-spacing:.5px;
+        }
+        .btn-content {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0 40px;
+        .btn-cta::before {
+            content:''; position:absolute; inset:0;
+            background:linear-gradient(135deg,rgba(255,255,255,0.15) 0%,transparent 60%);
+            opacity:0; transition:opacity .2s;
+        }
+        .icon-box {
+            position: absolute;
+            left: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        .btn-cta:hover { transform:translateY(-3px); box-shadow:0 12px 40px rgba(255,45,45,0.55); }
+        .btn-cta:hover::before { opacity:1; }
+        .btn-cta:active { transform:translateY(0); }
+        .btn-pulse {
+            position:absolute; inset:-6px; border-radius:12px;
+            border:2px solid var(--red); opacity:0;
+            animation:pulseRing 2s ease-out infinite;
+        }
+        .icon-svg {
+            fill: #FFFFFF;
+            width: 22px;
+            height: 22px;
+            transition: transform 0.3s ease;
+        @keyframes pulseRing { 0%{opacity:.6;transform:scale(1)} 100%{opacity:0;transform:scale(1.12)} }
+ 
+        .hero-caption {
+            font-size:.8rem; color:var(--muted);
+            margin-top:14px; position:relative; z-index:1;
+            animation:fadeDown .6s .5s ease both;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+ 
+        /* NÚMEROS */
+        .numbers {
+            display:flex; justify-content:center; gap:48px;
+            flex-wrap:wrap; padding:60px 20px;
+            border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+        }
+        .num-item { text-align:center; }
+        .num-item .n { font-family:'Bebas Neue',sans-serif; font-size:3rem; color:var(--red); line-height:1; }
+        .num-item .l { font-size:.82rem; color:var(--muted); margin-top:4px; text-transform:uppercase; letter-spacing:1px; }
+ 
+        /* SEÇÕES */
+        .section { padding:90px 20px; }
+        .container { max-width:1100px; margin:0 auto; }
+        .section-tag { font-size:.75rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--red); margin-bottom:12px; }
+        .section-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(2rem,5vw,3.5rem); line-height:1; margin-bottom:16px; }
+        .section-sub { color:var(--muted); font-size:1rem; line-height:1.6; max-width:520px; }
+ 
+        /* BENEFÍCIOS */
+        .benefits-grid {
+            display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+            gap:2px; margin-top:60px;
+            border:2px solid var(--border); border-radius:12px; overflow:hidden;
+        }
+        .benefit-card {
+            background:var(--card); padding:36px 28px;
+            position:relative; transition:background .25s;
+        }
+        .benefit-card:hover { background:#1c1c1c; }
+        .benefit-card::before {
+            content:''; position:absolute; top:0; left:0; right:0; height:3px;
+            background:linear-gradient(90deg,var(--red),var(--orange));
+            opacity:0; transition:opacity .25s;
+        }
+        .benefit-card:hover::before { opacity:1; }
+        .benefit-icon {
+            width:48px; height:48px; background:rgba(255,45,45,0.1);
+            border-radius:10px; display:flex; align-items:center; justify-content:center;
+            margin-bottom:20px; font-size:1.4rem;
+        }
+        .benefit-card h3 { font-size:1.1rem; font-weight:800; margin-bottom:10px; line-height:1.3; }
+        .benefit-card p { font-size:.9rem; color:var(--muted); line-height:1.6; }
+ 
+        /* COMO FUNCIONA */
+        .steps { margin-top:60px; display:flex; flex-direction:column; }
+        .step {
+            display:grid; grid-template-columns:64px 1fr;
+            gap:24px; padding:32px 0;
+            border-bottom:1px solid var(--border); align-items:start;
+        }
+        .step:last-child { border-bottom:none; }
+        .step-num { font-family:'Bebas Neue',sans-serif; font-size:3.5rem; color:var(--border); line-height:1; }
+        .step-content h3 { font-size:1.15rem; font-weight:800; margin-bottom:8px; }
+        .step-content p { font-size:.92rem; color:var(--muted); line-height:1.6; }
+        .step-tag {
+            display:inline-block; background:rgba(255,45,45,0.1); color:var(--red);
+            font-size:.72rem; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+            padding:3px 10px; border-radius:4px; margin-bottom:8px;
+        }
+ 
+        /* PROVA SOCIAL */
+        .proof-section { background:var(--dark); }
+        .proof-box {
+            border:1px solid var(--border); border-radius:12px;
+            padding:40px; margin-top:48px; position:relative; overflow:hidden;
+        }
+        .proof-box::before {
+            content:'"'; position:absolute; top:-20px; left:24px;
+            font-family:'Bebas Neue',sans-serif; font-size:10rem;
+            color:var(--red); opacity:.06; line-height:1;
+        }
+        .proof-text { font-size:clamp(1.1rem,2.5vw,1.4rem); line-height:1.6; font-weight:600; position:relative; z-index:1; }
+        .proof-text strong { color:var(--red); }
+        .proof-meta { margin-top:24px; display:flex; align-items:center; gap:14px; }
+        .proof-avatar {
+            width:44px; height:44px; flex-shrink:0;
+            background:linear-gradient(135deg,var(--red),var(--orange));
+            border-radius:50%; display:flex; align-items:center; justify-content:center;
+            font-weight:800; font-size:1.1rem;
+        }
+        .proof-name { font-weight:700; font-size:.95rem; }
+        .proof-role { font-size:.8rem; color:var(--muted); }
+ 
+        .proof-stats {
+            display:grid; grid-template-columns:repeat(3,1fr);
+            gap:2px; margin-top:48px;
+            border:1px solid var(--border); border-radius:12px; overflow:hidden;
+        }
+        .proof-stat { background:var(--card); padding:28px 20px; text-align:center; }
+        .proof-stat .val { font-family:'Bebas Neue',sans-serif; font-size:2.4rem; color:var(--red); }
+        .proof-stat .desc { font-size:.82rem; color:var(--muted); margin-top:4px; }
+ 
+        /* GARANTIA */
+        .guarantee {
+            border:2px dashed rgba(255,45,45,0.3); border-radius:16px;
+            padding:48px 40px; text-align:center; margin-top:60px;
+            background:rgba(255,45,45,0.03);
+        }
+        .guarantee-icon { font-size:3rem; margin-bottom:16px; }
+        .guarantee h3 { font-family:'Bebas Neue',sans-serif; font-size:2rem; margin-bottom:12px; }
+        .guarantee p { color:var(--muted); max-width:480px; margin:0 auto; line-height:1.7; }
+        .guarantee strong { color:var(--text); }
+ 
+        /* CTA FINAL */
+        .cta-final {
+            text-align:center; padding:100px 20px;
+            position:relative; overflow:hidden;
+        }
+        .cta-final::after {
+            content:''; position:absolute; inset:0;
+            background:radial-gradient(ellipse at center bottom,rgba(255,45,45,0.07) 0%,transparent 70%);
+            pointer-events:none;
+        }
+        .urgency-label {
+            display:inline-flex; align-items:center; gap:8px;
+            background:rgba(255,45,45,0.1); border:1px solid rgba(255,45,45,0.25);
+            color:var(--red); font-size:.78rem; font-weight:700;
+            letter-spacing:2px; text-transform:uppercase;
+            padding:6px 16px; border-radius:100px; margin-bottom:28px;
+            animation:pulseUrgency 2s ease infinite;
+        }
+        @keyframes pulseUrgency {
+            0%,100%{box-shadow:0 0 0 0 rgba(255,45,45,0.3)}
+            50%{box-shadow:0 0 0 8px rgba(255,45,45,0)}
+        }
+        .link-card:active {
+            transform: scale(0.98);
+        .cta-final h2 {
+            font-family:'Bebas Neue',sans-serif;
+            font-size:clamp(2.5rem,7vw,5rem); line-height:.95;
+            margin-bottom:20px; position:relative; z-index:1;
+        }
+        .gold-accent {
+            color: #C9A96E;
+        .cta-final > p {
+            color:var(--muted); max-width:460px; margin:0 auto 40px;
+            line-height:1.6; position:relative; z-index:1;
+        }
+        .footer {
+            margin-top: 60px;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            opacity: 0.5;
+            padding-bottom: 40px;
+        .cta-final .btn-wrap { position:relative; z-index:1; margin-top:0; }
+        .cta-security {
+            display:flex; align-items:center; justify-content:center;
+            gap:20px; margin-top:24px; flex-wrap:wrap;
+            position:relative; z-index:1;
+        }
+        @media (min-width: 768px) {
+            .link-card:hover {
+                transform: translateY(-4px) scale(1.02);
+                box-shadow: 0 12px 30px rgba(201, 169, 110, 0.25);
+            }
+            .link-card:hover::after {
+                background: #e2c0ad;
+            }
+            .link-card:hover .icon-svg {
+                transform: scale(1.1);
+            }
+        .cta-security span { display:flex; align-items:center; gap:6px; font-size:.8rem; color:var(--muted); }
+ 
+        /* FOOTER */
+        footer { background:#000; border-top:1px solid var(--border); padding:32px 20px; text-align:center; }
+        footer img { width:60px; height:60px; border-radius:12px; margin-bottom:12px; opacity:.6; }
+        footer p { font-size:.82rem; color:#444; }
+ 
+        /* REVEAL */
+        .reveal { opacity:0; transform:translateY(30px); transition:opacity .6s ease,transform .6s ease; }
+        .reveal.visible { opacity:1; transform:translateY(0); }
+ 
+        /* RESPONSIVE */
+        @media(max-width:600px){
+            .numbers{gap:28px;}
+            .proof-stats{grid-template-columns:1fr;}
+            .proof-box{padding:28px 20px;}
+            .guarantee{padding:36px 20px;}
+            .step{grid-template-columns:48px 1fr;gap:16px;}
+            .step-num{font-size:2.5rem;}
+        }
+        @media(prefers-reduced-motion:reduce){
+            *,.ticker-inner,.btn-pulse,.hero::after{animation:none!important;transition:none!important;}
+        }
+    </style>
+</head>
+<body>
+    <!-- Camada de Animação Unicorn Studio -->
+    <div id="bg-container">
+        <div style="width: 100%; height: 100%;" data-us-project="uMMAALLJEry69MoLqdJS"></div>
+ 
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+    <div class="ticker-inner">
+        🔥 PRODUTOS EM ALTA AGORA <span>|</span> ROTEIROS PRONTOS PARA GRAVAR <span>|</span> VENDA SEM APARECER <span>|</span> CONTEÚDO COM IA <span>|</span> TIKTOK SHOP <span>|</span>
+        🔥 PRODUTOS EM ALTA AGORA <span>|</span> ROTEIROS PRONTOS PARA GRAVAR <span>|</span> VENDA SEM APARECER <span>|</span> CONTEÚDO COM IA <span>|</span> TIKTOK SHOP <span>|</span>
+    </div>
+    <!-- Overlay de Legibilidade -->
+    <div class="bg-overlay"></div>
+    <!-- Conteúdo Principal -->
+    <div class="main-wrapper">
+        <div class="container">
+            
+            <div class="logo-container">
+                <img src="https://i.postimg.cc/rmd8bnBB/LOGO-RS-MAKEUP.png" alt="R&S Makeup Logo">
+</div>
+ 
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-logo">
+        <img src="https://i.postimg.cc/W4n6k4NZ/Banner-Renda-Shop.png" alt="RendaShop" width="90" height="90" fetchpriority="high">
+    </div>
+    <div class="hero-badge">🔴 Acesso disponível agora</div>
+    <h1>Descubra o que postar para<br><em>vender no TikTok Shop</em><br>todos os dias</h1>
+    <p class="hero-sub">Use roteiros prontos, produtos em alta e ferramentas para criar conteúdo <strong>mesmo sem aparecer na câmera.</strong></p>
+    <div class="btn-wrap">
+        <div class="btn-pulse"></div>
+        <a href="https://go.perfectpay.com.br/PPU38CQB54C" class="btn-cta" target="_blank" rel="noopener noreferrer">
+            ▶ Quero acesso ao RendaShop
+        </a>
+    </div>
+    <p class="hero-caption">✓ Acesso imediato &nbsp;·&nbsp; ✓ Garantia de 7 dias &nbsp;·&nbsp; ✓ Cancele quando quiser</p>
+</section>
+ 
+<!-- NÚMEROS -->
+<div class="numbers reveal">
+    <div class="num-item">
+        <div class="n">+3.200</div>
+        <div class="l">Criadores ativos</div>
+    </div>
+    <div class="num-item">
+        <div class="n">Diário</div>
+        <div class="l">Atualização de produtos</div>
+    </div>
+    <div class="num-item">
+        <div class="n">+500</div>
+        <div class="l">Roteiros no acervo</div>
+    </div>
+    <div class="num-item">
+        <div class="n">7 dias</div>
+        <div class="l">Garantia total</div>
+    </div>
+</div>
+ 
+<!-- BENEFÍCIOS -->
+<section class="section">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-tag">O que você recebe</p>
+            <h2 class="section-title">Tudo que você precisa<br>para vender todo dia</h2>
+            <p class="section-sub">Sem precisar inventar nada do zero. Sem precisar aparecer. Sem precisar saber editar.</p>
+        </div>
+        <div class="benefits-grid reveal">
+            <div class="benefit-card">
+                <div class="benefit-icon">📦</div>
+                <h3>Produtos que estão vendendo agora</h3>
+                <p>Ranking atualizado diariamente com os produtos mais comprados no TikTok Shop. Você sabe exatamente o que promover.</p>
+            </div>
+            <h1 class="brand-name serif">R&S Makeup</h1>
+            <p class="bio">Beleza simples. Resultado elegante <span class="gold-accent">✨</span></p>
+            <!-- Secção de Links Hardcoded (Sem Admin) -->
+            <div class="links-wrapper">
+                
+                <!-- Link da Loja -->
+                <a href="https://rsmakeup.shop/" target="_blank" class="link-card">
+                    <span class="btn-content">
+                        <span class="icon-box">
+                            <svg class="icon-svg" viewBox="0 0 576 512">
+                                <path d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z"/>
+                            </svg>
+                        </span>
+                        <span>Loja / Catálogo</span>
+                    </span>
+            <div class="benefit-card">
+                <div class="benefit-icon">🎬</div>
+                <h3>Roteiros prontos para gravar</h3>
+                <p>Scripts linha a linha para você gravar ou usar em vídeos sem câmera. Só seguir e postar.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">💡</div>
+                <h3>Ideias de vídeos virais</h3>
+                <p>Formatos de conteúdo que já performaram no TikTok Shop. Adapte para o seu produto em minutos.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🤖</div>
+                <h3>Ferramentas de IA inclusas</h3>
+                <p>Prompts e ferramentas para gerar legendas, descrições e hooks que convertem — sem esforço criativo.</p>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<!-- COMO FUNCIONA -->
+<section class="section" style="background:var(--dark);">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-tag">Como funciona</p>
+            <h2 class="section-title">3 passos para<br>começar a vender</h2>
+        </div>
+        <div class="steps">
+            <div class="step reveal">
+                <div class="step-num">01</div>
+                <div class="step-content">
+                    <span class="step-tag">Acesse agora</span>
+                    <h3>Entre na plataforma e veja o ranking do dia</h3>
+                    <p>Logo após o acesso, você vê quais produtos estão explodindo no TikTok Shop hoje. Escolha o que faz sentido para você promover.</p>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-num">02</div>
+                <div class="step-content">
+                    <span class="step-tag">Crie o conteúdo</span>
+                    <h3>Use o roteiro pronto e grave (ou não apareça)</h3>
+                    <p>Pegue o roteiro do produto, use as ferramentas de IA para adaptar e crie o vídeo. Pode aparecer ou não — tem formato para os dois casos.</p>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-num">03</div>
+                <div class="step-content">
+                    <span class="step-tag">Publique e venda</span>
+                    <h3>Poste no TikTok e comece a gerar comissões</h3>
+                    <p>Cada venda gerada pelo seu link te paga comissão direto pelo TikTok Shop. Quanto mais você posta, mais você vende.</p>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:56px;" class="reveal">
+            <div class="btn-wrap" style="margin-top:0;">
+                <div class="btn-pulse"></div>
+                <a href="https://go.perfectpay.com.br/PPU38CQB54C" class="btn-cta" target="_blank" rel="noopener noreferrer">
+                    ▶ Quero acesso ao RendaShop
+                </a>
+                <!-- WhatsApp (Substitua o número abaixo quando tiver o definitivo) -->
+                <a href="https://wa.me/5500000000000?text=Olá! Gostaria de saber mais sobre a R&S Makeup." target="_blank" class="link-card">
+                    <span class="btn-content">
+                        <span class="icon-box">
+                            <svg class="icon-svg" viewBox="0 0 448 512">
+                                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.6 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                            </svg>
+                        </span>
+                        <span>WhatsApp</span>
+                    </span>
+                </a>
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@rs_makeshop?_r=1&_t=ZS-95AFYdf9fSp" target="_blank" class="link-card">
+                    <span class="btn-content">
+                        <span class="icon-box">
+                            <svg class="icon-svg" viewBox="0 0 448 512">
+                                <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.32c7.87,33.32,27.31,62.33,55.11,82.47a120.4,120.4,0,0,0,65.8,19.34V209.91Z"/>
+                            </svg>
+                        </span>
+                        <span>TikTok</span>
+                    </span>
+                </a>
+            </div>
+            <div class="footer">
+                © R&S Makeup
+        </div>
+    </div>
+</section>
+ 
+<!-- PROVA SOCIAL -->
+<section class="section proof-section">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-tag">Resultados reais</p>
+            <h2 class="section-title">Usado por quem já<br>vende no TikTok Shop</h2>
+        </div>
+        <div class="proof-box reveal">
+            <p class="proof-text">
+                "Comecei sem seguidores e sem aparecer. Na primeira semana usando os roteiros do RendaShop, postei 5 vídeos e <strong>vendi R$1.800 em comissões</strong>. A diferença é saber o que postar."
+            </p>
+            <div class="proof-meta">
+                <div class="proof-avatar">M</div>
+                <div>
+                    <div class="proof-name">Marina S.</div>
+                    <div class="proof-role">Criadora de conteúdo UGC · TikTok Shop</div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="proof-stats reveal">
+            <div class="proof-stat">
+                <div class="val">R$1.800</div>
+                <div class="desc">Em comissões na 1ª semana</div>
+            </div>
+            <div class="proof-stat">
+                <div class="val">5 vídeos</div>
+                <div class="desc">Postados com roteiros prontos</div>
+            </div>
+            <div class="proof-stat">
+                <div class="val">0</div>
+                <div class="desc">Seguidores no início</div>
+            </div>
+        </div>
+    </div>
+    <!-- Unicorn Studio Script -->
+    <script type="text/javascript">
+    !function(){
+    var u=window.UnicornStudio;
+    if(u&&u.init){
+    if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded",function(){u.init()})
+    }else{u.init()}
+    }else{
+    window.UnicornStudio={isInitialized:!1};
+    var i=document.createElement("script");
+    i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.1.9/dist/unicornStudio.umd.js",
+    i.onload=function(){
+    if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded",function(){UnicornStudio.init()})
+    }else{UnicornStudio.init()}
+    },
+    (document.head||document.body).appendChild(i)
+    }}();
+    </script>
+</section>
+ 
+<!-- GARANTIA -->
+<section class="section">
+    <div class="container">
+        <div class="guarantee reveal">
+            <div class="guarantee-icon">🛡️</div>
+            <h3>Garantia incondicional de 7 dias</h3>
+            <p>Acesse o RendaShop, use as ferramentas, veja os roteiros e os produtos em alta. Se em 7 dias você sentir que <strong>não é para você</strong>, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</p>
+        </div>
+    </div>
+</section>
+ 
+<!-- CTA FINAL -->
+<section class="cta-final">
+    <div class="urgency-label">🔴 Vagas abertas agora</div>
+    <h2>Comece a vender<br>no TikTok Shop<br><span style="color:var(--red)">hoje mesmo</span></h2>
+    <p>Não precisa de câmera. Não precisa de seguidores. Só precisa de conteúdo certo — e o RendaShop te dá isso.</p>
+    <div class="btn-wrap">
+        <div class="btn-pulse"></div>
+        <a href="https://go.perfectpay.com.br/PPU38CQB54C" class="btn-cta" target="_blank" rel="noopener noreferrer">
+            ▶ Quero acesso ao RendaShop
+        </a>
+    </div>
+    <div class="cta-security">
+        <span>🔒 Pagamento 100% seguro</span>
+        <span>✅ Acesso imediato</span>
+        <span>↩️ Garantia de 7 dias</span>
+    </div>
+</section>
+ 
+<!-- FOOTER -->
+<footer>
+    <img src="https://i.postimg.cc/W4n6k4NZ/Banner-Renda-Shop.png" alt="RendaShop" loading="lazy" width="60" height="60">
+    <p>RendaShop © 2026 · Todos os direitos reservados · rendashop.online</p>
+</footer>
+ 
+<!-- PROTEÇÃO ANTI-CLONAGEM -->
+<script>
+(function(){
+    'use strict';
+    var ALLOWED=['rendashop.online','www.rendashop.online','localhost','127.0.0.1'];
+    var h=location.hostname.toLowerCase();
+    var ok=ALLOWED.some(function(d){return h===d||h.endsWith('.'+d);});
+    if(!ok){
+        document.documentElement.innerHTML='<div style="background:#000;color:#ff3333;font-family:monospace;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;text-align:center;padding:20px;"><h1 style="font-size:3rem;margin-bottom:16px">⛔</h1><h2 style="margin-bottom:10px">Acesso não autorizado</h2><p>Este conteúdo só pode ser exibido no domínio oficial.</p></div>';
+        return;
+    }
+    document.addEventListener('contextmenu',function(e){e.preventDefault();});
+    document.addEventListener('keydown',function(e){
+        var b=e.key==='F12'||(e.ctrlKey&&['u','U','s','S','p','P'].includes(e.key))||(e.ctrlKey&&e.shiftKey&&['i','I','j','J','c','C','k','K'].includes(e.key));
+        if(b){e.preventDefault();e.stopImmediatePropagation();}
+    },true);
+    document.addEventListener('selectstart',function(e){e.preventDefault();});
+    document.addEventListener('dragstart',function(e){e.preventDefault();});
+    if(window.self!==window.top){try{window.top.location.href=window.self.location.href;}catch(ex){window.self.location.href='about:blank';}}
+    var dt=false,thr=160;
+    setInterval(function(){
+        var o=(window.outerWidth-window.innerWidth)>thr||(window.outerHeight-window.innerHeight)>thr;
+        if(o&&!dt){dt=true;document.body.style.filter='blur(10px)';document.body.style.pointerEvents='none';}
+        else if(!o&&dt){dt=false;document.body.style.filter='';document.body.style.pointerEvents='';}
+    },800);
+    var s=document.createElement('style');
+    s.textContent='*{-webkit-user-select:none!important;user-select:none!important;}';
+    document.head.appendChild(s);
+    var noop=function(){};
+    try{['log','warn','info','debug','error','table','dir'].forEach(function(m){console[m]=noop;});}catch(e){}
+})();
+</script>
+ 
+<!-- SCROLL REVEAL -->
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+    var els=document.querySelectorAll('.reveal');
+    var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+            if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target);}
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el);});
+    requestAnimationFrame(function(){
+        var vh=window.innerHeight;
+        els.forEach(function(el){if(el.getBoundingClientRect().top<vh)el.classList.add('visible');});
+    });
+});
+</script>
+ 
+</body>
+</html>
+</html>
