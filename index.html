@@ -732,6 +732,39 @@ document.addEventListener('DOMContentLoaded',function(){
     });
 });
 </script>
- 
+<!-- PROTEÇÃO DE DOMÍNIO E ANTI-INSPEÇÃO -->
+<script>
+(function() {
+    // Bloqueia botão direito
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    // Bloqueia atalhos do teclado (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Cmd+Option+I, etc)
+    document.addEventListener('keydown', function(e) {
+        if (
+            e.key === 'F12' || 
+            (e.ctrlKey && e.shiftKey && (e.key.toLowerCase() === 'i' || e.key.toLowerCase() === 'j' || e.key.toLowerCase() === 'c')) ||
+            (e.ctrlKey && e.key.toLowerCase() === 'u') ||
+            (e.metaKey && e.altKey && (e.key.toLowerCase() === 'i' || e.key.toLowerCase() === 'j' || e.key.toLowerCase() === 'u')) ||
+            (e.metaKey && e.key.toLowerCase() === 's') ||
+            (e.ctrlKey && e.key.toLowerCase() === 's')
+        ) {
+            e.preventDefault();
+        }
+    });
+
+    // Proteção de domínio
+    var domain = window.location.hostname;
+    // Permite local/file para você continuar visualizando no PC, mas bloqueia qualquer outro domínio na web
+    var isLocal = (domain === 'localhost' || domain === '127.0.0.1' || domain === ''); 
+    var isAllowed = (domain === 'www.rendashop.online' || domain === 'rendashop.online');
+
+    if (!isAllowed && !isLocal) {
+        document.body.innerHTML = '<div style="display:flex; justify-content:center; align-items:center; height:100vh; background:#000; color:#ff00b3; font-family:sans-serif; font-size:1.5rem; text-align:center; padding:20px;">Acesso Negado.<br>Site clonado ou acesso inválido.</div>';
+    }
+})();
+</script>
+
 </body>
 </html>
