@@ -44,7 +44,6 @@
             font-family:'Manrope',sans-serif;
             overflow-x:hidden;
             -webkit-font-smoothing:antialiased;
-            /* Anti-cópia: impede seleção de texto */
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
@@ -356,9 +355,13 @@
             overflow:hidden;
             border:2px solid var(--border);
             box-shadow:0 8px 24px rgba(0,0,0,0.5);
+            background:var(--card);
+            min-height:300px;
         }
         .fat-img img {
             width:100%;
+            height:100%;
+            object-fit:cover;
             display:block;
         }
         .fat-img-destaque {
@@ -414,15 +417,20 @@
 <!-- HERO -->
 <section class="hero">
     <div class="hero-logo">
-        <img src="https://i.postimg.cc/W4n6k4NZ/Banner-Renda-Shop.png" alt="RendaShop" width="90" height="90" fetchpriority="high">
+        <img src="https://i.postimg.cc/W4n6k4NZ/Banner-Renda-Shop.png" alt="RendaShop" width="90" height="90" fetchpriority="high" loading="eager">
     </div>
     <div class="hero-badge">🔥 Últimos acessos disponíveis</div>
     <h1><em>R$2.000+ por dia</em> é absolutamente possível<br>(e você começa HOJE)</h1>
     <p class="hero-sub">Produtos que estão EXPLODINDO AGORA + roteiros que você copia + IA que faz tudo. Enquanto você fica vendo, outros estão faturando. Não deixe mais dinheiro na mesa.</p>
     
-    <!-- MOCKUP / DASHBOARD IMAGE -->
+    <!-- MOCKUP / DASHBOARD IMAGE COM LAZY LOAD -->
     <div class="hero-image reveal" style="max-width:900px; margin:40px auto; padding:0 20px;">
-        <img src="https://i.postimg.cc/TYx3L4Fk/Captura-de-Tela-2026-04-27-a-s-20-27-21.png" alt="Plataforma RendaShop" style="width:100%; height:auto; display:block; filter: drop-shadow(0px 20px 50px rgba(255,0,179,0.15)); border-radius:12px;">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 500'%3E%3Crect fill='%23111'/%3E%3C/svg%3E" 
+             data-src="https://i.postimg.cc/TYx3L4Fk/Captura-de-Tela-2026-04-27-a-s-20-27-21.png" 
+             alt="Plataforma RendaShop" 
+             loading="lazy" 
+             decoding="async"
+             style="width:100%; height:auto; display:block; filter: drop-shadow(0px 20px 50px rgba(255,0,179,0.15)); border-radius:12px;">
     </div>
 
     <div class="btn-wrap">
@@ -505,8 +513,13 @@
             <p class="section-sub" style="max-width:700px; margin-left:auto; margin-right:auto;">
                 Vídeos com IA, personagens, UGC que parecem caseiros. Ninguém descobre que é AI-generated. Você só ganha comissão todos os dias.
             </p>
-            <div class="reveal-scale" style="margin-top:40px; max-width:800px; margin-left:auto; margin-right:auto; border-radius:24px; overflow:hidden; box-shadow: 0 0 50px rgba(255,0,179,0.2); border: 2px solid var(--border);">
-                <img src="https://i.postimg.cc/4JTNgYv8/Rendashop.png" alt="Conteúdo sem aparecer" loading="lazy" style="width:100%; display:block;">
+            <div class="reveal-scale" style="margin-top:40px; max-width:800px; margin-left:auto; margin-right:auto; border-radius:24px; overflow:hidden; box-shadow: 0 0 50px rgba(255,0,179,0.2); border: 2px solid var(--border); background:var(--card); min-height:400px;">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Crect fill='%23111'/%3E%3C/svg%3E" 
+                     data-src="https://i.postimg.cc/4JTNgYv8/Rendashop.png" 
+                     alt="Conteúdo sem aparecer" 
+                     loading="lazy" 
+                     decoding="async"
+                     style="width:100%; height:100%; object-fit:cover; display:block;">
             </div>
         </div>
     </div>
@@ -564,8 +577,13 @@
             <p class="section-sub" style="max-width:700px; margin-left:auto; margin-right:auto;">
                 Não é promessa vazia. Tem gente que postou de manhã e vendeu à tarde. Tudo depende da sua ação.
             </p>
-            <div class="reveal-scale" style="margin-top:40px; max-width:500px; margin-left:auto; margin-right:auto; border-radius:20px; overflow:hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.5); border: 1px solid var(--border);">
-                <img src="https://i.postimg.cc/RCqvRK9x/IMG-0655.jpg" alt="Resultados rápidos" loading="lazy" style="width:100%; display:block;">
+            <div class="reveal-scale" style="margin-top:40px; max-width:500px; margin-left:auto; margin-right:auto; border-radius:20px; overflow:hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.5); border: 1px solid var(--border); background:var(--card); min-height:300px;">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 400'%3E%3Crect fill='%23111'/%3E%3C/svg%3E" 
+                     data-src="https://i.postimg.cc/RCqvRK9x/IMG-0655.jpg" 
+                     alt="Resultados rápidos" 
+                     loading="lazy" 
+                     decoding="async"
+                     style="width:100%; height:100%; object-fit:cover; display:block;">
             </div>
         </div>
     </div>
@@ -581,19 +599,31 @@
             </p>
         </div>
         
-        <!-- PRINTS DE RESULTADOS -->
+        <!-- PRINTS DE RESULTADOS COM LAZY LOAD -->
         <div class="faturamento-gallery reveal">
             <!-- Imagem 2 -->
             <div class="fat-img">
-                <img src="https://i.postimg.cc/px7pv0d3/img-3-fatura.png" alt="Print de Faturamento 1">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 400'%3E%3Crect fill='%23111'/%3E%3C/svg%3E" 
+                     data-src="https://i.postimg.cc/px7pv0d3/img-3-fatura.png" 
+                     alt="Print de Faturamento 1" 
+                     loading="lazy" 
+                     decoding="async">
             </div>
             <!-- Imagem 1 (WhatsApp) - Ênfase Central -->
             <div class="fat-img fat-img-destaque">
-                <img src="https://i.postimg.cc/bwqq6S9K/print-de-cliente-whatsapp.jpg" alt="Print de WhatsApp Cliente">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Crect fill='%23111'/%3E%3C/svg%3E" 
+                     data-src="https://i.postimg.cc/bwqq6S9K/print-de-cliente-whatsapp.jpg" 
+                     alt="Print de WhatsApp Cliente" 
+                     loading="lazy" 
+                     decoding="async">
             </div>
             <!-- Imagem 3 -->
             <div class="fat-img">
-                <img src="https://i.postimg.cc/Gr9HZ0bs/img-2-faturamento.png" alt="Print de Faturamento 2">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 400'%3E%3Crect fill='%23111'/%3E%3C/svg%3E" 
+                     data-src="https://i.postimg.cc/Gr9HZ0bs/img-2-faturamento.png" 
+                     alt="Print de Faturamento 2" 
+                     loading="lazy" 
+                     decoding="async">
             </div>
         </div>
 
@@ -728,8 +758,44 @@
     <p>RendaShop © 2026 · Todos os direitos reservados · rendashop.online</p>
 </footer>
  
+<!-- LAZY LOAD SCRIPT - CARREGA IMAGENS CONFORME NECESSÁRIO -->
+<script>
+(function() {
+    // Lazy Load de imagens com Intersection Observer
+    const images = document.querySelectorAll('img[data-src]');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                const src = img.getAttribute('data-src');
+                
+                // Criar uma nova imagem para pré-carregamento
+                const tempImg = new Image();
+                tempImg.onload = function() {
+                    img.src = src;
+                    img.removeAttribute('data-src');
+                    img.classList.add('loaded');
+                };
+                tempImg.onerror = function() {
+                    // Se der erro, tenta novamente em 2s
+                    setTimeout(() => {
+                        img.src = src;
+                    }, 2000);
+                };
+                tempImg.src = src;
+                
+                observer.unobserve(img);
+            }
+        });
+    }, {
+        rootMargin: '50px'
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+})();
+</script>
 
- 
 <!-- SCROLL REVEAL E PERFORMANCE -->
 <script>
 document.addEventListener('DOMContentLoaded',function(){
@@ -746,6 +812,7 @@ document.addEventListener('DOMContentLoaded',function(){
     });
 });
 </script>
+
 <!-- PROTEÇÃO DE DOMÍNIO E ANTI-INSPEÇÃO -->
 <script>
 (function() {
@@ -770,7 +837,6 @@ document.addEventListener('DOMContentLoaded',function(){
 
     // Proteção de domínio
     var domain = window.location.hostname;
-    // Permite local/file para você continuar visualizando no PC, mas bloqueia qualquer outro domínio na web
     var isLocal = (domain === 'localhost' || domain === '127.0.0.1' || domain === ''); 
     var isAllowed = (domain === 'www.rendashop.online' || domain === 'rendashop.online');
 
