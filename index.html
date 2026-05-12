@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="description" content="RendaShop: Descubra o que postar para vender no TikTok Shop todos os dias. Roteiros prontos, produtos em alta e ferramentas com IA.">
     <meta property="og:title" content="RendaShop - Venda no TikTok Shop Todo Dia">
     <meta property="og:description" content="Use roteiros prontos, produtos em alta e ferramentas para criar conteúdo mesmo sem aparecer.">
@@ -26,8 +26,8 @@
  
     <style>
         :root {
-            --red:    #ff00b3; /* Rosa Neon Agressivo */
-            --orange: #9d00ff; /* Roxo Neon */
+            --red:    #ff00b3;
+            --orange: #9d00ff;
             --black:  #050505;
             --dark:   #0a0a0a;
             --card:   #111111;
@@ -37,7 +37,10 @@
         }
  
         *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-        html { scroll-behavior:smooth; }
+        html { 
+            scroll-behavior:smooth;
+            touch-action: manipulation;
+        }
         body {
             background:var(--black);
             color:var(--text);
@@ -48,6 +51,12 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        /* Desabilita zoom no touch */
+        input, textarea, select {
+            font-size: 16px;
         }
  
         /* TICKER */
@@ -153,6 +162,8 @@
             transition:transform .2s,box-shadow .2s;
             box-shadow:0 6px 30px rgba(255,45,45,0.4);
             text-transform:uppercase; letter-spacing:.5px;
+            border:none;
+            -webkit-tap-highlight-color: transparent;
         }
         .btn-cta::before {
             content:''; position:absolute; inset:0;
@@ -160,8 +171,8 @@
             opacity:0; transition:opacity .2s;
         }
         .btn-cta:hover { transform:translateY(-3px); box-shadow:0 12px 40px rgba(255,45,45,0.55); }
-        .btn-cta:hover::before { opacity:1; }
         .btn-cta:active { transform:translateY(0); }
+        .btn-cta:active { transform:scale(0.98); }
         .btn-pulse {
             position:absolute; inset:-6px; border-radius:12px;
             border:2px solid var(--red); opacity:0;
@@ -338,6 +349,15 @@
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
+
+        /* IMAGENS COM FADE SUAVE */
+        img[data-src] {
+            opacity: 0;
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        img.loaded {
+            opacity: 1;
+        }
  
         /* GALERIA FATURAMENTO */
         .faturamento-gallery {
@@ -758,7 +778,7 @@
     <p>RendaShop © 2026 · Todos os direitos reservados · rendashop.online</p>
 </footer>
  
-<!-- LAZY LOAD SCRIPT - CARREGA IMAGENS CONFORME NECESSÁRIO -->
+<!-- LAZY LOAD SCRIPT COM FADE SUAVE -->
 <script>
 (function() {
     // Lazy Load de imagens com Intersection Observer
@@ -778,10 +798,10 @@
                     img.classList.add('loaded');
                 };
                 tempImg.onerror = function() {
-                    // Se der erro, tenta novamente em 2s
                     setTimeout(() => {
                         img.src = src;
-                    }, 2000);
+                        img.classList.add('loaded');
+                    }, 1500);
                 };
                 tempImg.src = src;
                 
@@ -789,7 +809,7 @@
             }
         });
     }, {
-        rootMargin: '50px'
+        rootMargin: '30px'
     });
     
     images.forEach(img => imageObserver.observe(img));
@@ -816,12 +836,10 @@ document.addEventListener('DOMContentLoaded',function(){
 <!-- PROTEÇÃO DE DOMÍNIO E ANTI-INSPEÇÃO -->
 <script>
 (function() {
-    // Bloqueia botão direito
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
     });
 
-    // Bloqueia atalhos do teclado (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Cmd+Option+I, etc)
     document.addEventListener('keydown', function(e) {
         if (
             e.key === 'F12' || 
@@ -835,7 +853,6 @@ document.addEventListener('DOMContentLoaded',function(){
         }
     });
 
-    // Proteção de domínio
     var domain = window.location.hostname;
     var isLocal = (domain === 'localhost' || domain === '127.0.0.1' || domain === ''); 
     var isAllowed = (domain === 'www.rendashop.online' || domain === 'rendashop.online');
