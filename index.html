@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, shrink-to-fit=no">
     <meta name="description" content="RendaShop: Descubra o que postar para vender no TikTok Shop todos os dias. Roteiros prontos, produtos em alta e ferramentas com IA.">
     <meta property="og:title" content="RendaShop - Venda no TikTok Shop Todo Dia">
     <meta property="og:description" content="Use roteiros prontos, produtos em alta e ferramentas para criar conteúdo mesmo sem aparecer.">
@@ -833,14 +833,49 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 
-<!-- PROTEÇÃO DE DOMÍNIO E ANTI-INSPEÇÃO -->
+<!-- PROTEÇÃO DE DOMÍNIO, ANTI-ZOOM E ANTI-INSPEÇÃO -->
 <script>
 (function() {
-    document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-    });
+    'use strict';
+    
+    // ===== BLOQUEIO DE ZOOM (MÚLTIPLOS MÉTODOS) =====
+    
+    // Método 1: Desabilitar zoom via Ctrl/Cmd + scroll
+    document.addEventListener('wheel', function(e) {
+        if (e.ctrlKey || e.metaKey) {
+            e.preventDefault();
+            return false;
+        }
+    }, { passive: false });
 
+    // Método 2: Desabilitar zoom via touch (pinch)
+    document.addEventListener('touchmove', function(e) {
+        if (e.touches.length > 1) {
+            e.preventDefault();
+            return false;
+        }
+    }, { passive: false });
+
+    // Método 3: Desabilitar zoom via duplo toque
+    var lastTap = 0;
+    document.addEventListener('touchend', function(e) {
+        var currentTime = new Date().getTime();
+        var tapLength = currentTime - lastTap;
+        if (tapLength < 300 && tapLength > 0) {
+            e.preventDefault();
+            return false;
+        }
+        lastTap = currentTime;
+    }, { passive: false });
+
+    // Método 4: Bloqueio de atalhos de zoom do teclado
     document.addEventListener('keydown', function(e) {
+        // Bloqueia Ctrl+Plus, Ctrl+Minus, Ctrl+0
+        if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '0' || e.key === '=' || e.key === '-' || e.key === '_')) {
+            e.preventDefault();
+            return false;
+        }
+        // DevTools
         if (
             e.key === 'F12' || 
             (e.ctrlKey && e.shiftKey && (e.key.toLowerCase() === 'i' || e.key.toLowerCase() === 'j' || e.key.toLowerCase() === 'c')) ||
@@ -850,15 +885,40 @@ document.addEventListener('DOMContentLoaded',function(){
             (e.ctrlKey && e.key.toLowerCase() === 's')
         ) {
             e.preventDefault();
+            return false;
+        }
+    }, { passive: false });
+
+    // Método 5: Reforçar viewport meta tag
+    var meta = document.querySelector('meta[name="viewport"]');
+    if (meta) {
+        meta.setAttribute('content', 'width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, shrink-to-fit=no');
+    }
+
+    // Método 6: Bloquear clique direito
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+    });
+
+    // Método 7: Bloquear zoom em inputs
+    document.addEventListener('focusin', function(e) {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+            var meta = document.querySelector('meta[name="viewport"]');
+            if (meta) {
+                meta.setAttribute('content', 'width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no');
+            }
         }
     });
 
+    // ===== PROTEÇÃO DE DOMÍNIO =====
     var domain = window.location.hostname;
     var isLocal = (domain === 'localhost' || domain === '127.0.0.1' || domain === ''); 
     var isAllowed = (domain === 'www.rendashop.online' || domain === 'rendashop.online');
 
     if (!isAllowed && !isLocal) {
         document.body.innerHTML = '<div style="display:flex; justify-content:center; align-items:center; height:100vh; background:#000; color:#ff00b3; font-family:sans-serif; font-size:1.5rem; text-align:center; padding:20px;">Acesso Negado.<br>Site clonado ou acesso inválido.</div>';
+        return false;
     }
 })();
 </script>
